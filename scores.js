@@ -1,7 +1,8 @@
 export default async function handler(req, res) {
   try {
+    // This updated URL forces ESPN to look for the CJ Cup event instead of breaking
     const r = await fetch(
-      'https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard',
+      'https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard?event=401580155',
       { headers: { 'User-Agent': 'Mozilla/5.0' } }
     );
     if (!r.ok) throw new Error('ESPN HTTP ' + r.status);
